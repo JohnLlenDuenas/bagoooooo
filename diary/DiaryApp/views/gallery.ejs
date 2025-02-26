@@ -1,0 +1,59 @@
+<head>
+    <title>JadeLlenDiaries🌻</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+.home{
+  text-align: center;
+  font-size: 125%;
+  font-family: 'Courier New', Courier, monospace; /* Typewriter-like font */
+  border: 1px solid #ccc;
+  resize: none;
+  line-height: 1.6;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #333;
+  text-decoration: none;
+}
+.paper {
+      background: linear-gradient(white, #f9f9f9);
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      margin: .5% auto;
+      max-width: 800px;
+      border-radius: 10px;
+      background-image: linear-gradient(white 50px, #e3e3e3 51px);
+      background-size: 100% 52px;
+    }
+
+</style>
+</head>
+<body style="background-color: blanchedalmond;text-align: center;">
+    <div style="text-align: center; font-family: 'Courier New', Courier, monospace; margin: 10%;">
+        <h1>Diaries 📖</h1>
+        
+        <% diaries.forEach(function(diary) { %>
+            <div class="paper">
+                <a style="text-decoration: none; color: black;" href="/diary/view/<%= diary._id %>">
+                    <strong><%= diary.title %></strong>: <%= diary.date.toDateString() %>
+                </a>
+            </div>
+        <% }) %>
+        
+        <!-- Pagination controls -->
+        <div class="pagination">
+            <% if (currentPage > 1) { %>
+                <a href="/diary/gallery?page=<%= currentPage - 1 %>"style="font-size: 250%; "class="home"><</a>
+            <% } %>
+        
+            <% if (currentPage < totalPages) { %>
+                <a href="/diary/gallery?page=<%= currentPage + 1 %>" style="font-size: 250%;margin-left:50%;" class="home">></a>
+            <% } %>
+        </div>
+        
+        
+    </div>
+    <a href="/" class="home" >Home</a>
+</body>

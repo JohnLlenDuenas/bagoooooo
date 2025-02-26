@@ -1,0 +1,91 @@
+<head>
+    <title>JadeLlenDiaries🌻</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+    
+        .bg{
+            text-align: center; 
+            font-family: 'Courier New', Courier, monospace; 
+        }
+        .itm{
+            display: grid; grid-template-columns: auto auto; padding-top: 5% ;
+            margin-left: 20%;margin-right: 20%;
+        }
+        img{
+            width: 15%; height: auto;
+        }
+        
+        h1{
+            margin-top: 10%;
+            font-size: 300%;
+        }
+    
+        body {
+    background-color: blanchedalmond;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://raw.githubusercontent.com/JohnLlenDuenas/JohnLlenDuenas.github.io/77875c6b5cddf5c634998164a0bbac9d53ed535b/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2; 
+    z-index: -1; 
+}
+@media screen and (max-width: 480px) {
+            img {
+                
+                width: 30%; 
+            }
+            .itm{
+                padding-top: 10%;
+            }
+            .bg {
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+            h1{
+                margin-top: 75%;
+                font-size: 200%;
+            }
+        }
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body >
+    <div class="bg" >
+        <br class="space">
+        <h1>Welcome to the Diary by Mahal🌻</h1>
+        <div class="itm">
+            <a href="/diary/write"><img src="https://cdn-icons-png.flaticon.com/512/84/84539.png" ></a>
+            <a href="/diary/gallery"><img src="https://www.shareicon.net/data/2017/03/02/880210_images_512x512.png" ></a>
+        </div>
+
+
+        <% if (isMonthsary) { %>
+            <% if (isAnniversary) { %>
+                <h1>Happy <%= years %> Year Anniversary!</h1>
+            <% } else { %>
+                <h1>Happy <%= monthsPassed %> Monthsary!</h1>
+            <% } %>
+        <% } else { %>
+            <div style=" margin: 10%;">
+                <p style="font-size: 75%;">Its been <%= years %> yrs, <%= months %> mons, <%= days %> days, <%= hours %> hrs, <%= minutes %> mins, <%= seconds %> secs</p>
+            </div>
+           
+        <% } %>
+        
+    </div>
+</body>
